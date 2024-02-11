@@ -1,0 +1,40 @@
+root@moon:/home/lilmoon# mkdir Human_Friends
+
+root@moon:/home/lilmoon# ls
+
+Desktop  Documents  Downloads  human_friends  Human_Friends  Music  pack_animals  pets  Pictures  Public  snap  Templates  Videos
+
+root@moon:/home/lilmoon# mv -v /home/lilmoon/human_friends Human_Friends/
+
+renamed '/home/lilmoon/human_friends' -> 'Human_Friends/human_friends'
+
+root@moon:/home/lilmoon# ls
+
+Desktop  Documents  Downloads  Human_Friends  Music  pack_animals  pets  Pictures  Public  snap  Templates  Videos
+
+root@moon:/home/lilmoon# ls Human_Friends/
+
+human_friends
+
+root@moon:/home/lilmoon# cat Human_Friends/human_friends 
+
+dog
+
+cat
+
+hamster
+
+parrot
+
+horse
+
+camel
+
+donkey
+
+root@moon:/home/lilmoon# 
+
+
+
+
+
