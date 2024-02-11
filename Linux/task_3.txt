@@ -1,0 +1,474 @@
+root@moon:/home/lilmoon# dpkg -i /home/lilmoon/Downloads/mysql-apt-config_0.8.29-1_all.deb 
+
+Selecting previously unselected package mysql-apt-config.
+
+(Reading database ... 241752 files and directories currently installed.)
+
+Preparing to unpack .../mysql-apt-config_0.8.29-1_all.deb ...
+
+Unpacking mysql-apt-config (0.8.29-1) ...
+
+Setting up mysql-apt-config (0.8.29-1) ...
+
+root@moon:/home/lilmoon# apt update
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]                  
+
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                    
+
+Get:5 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]                                          
+
+Get:6 http://repo.mysql.com/apt/ubuntu jammy InRelease [20,2 kB]                
+
+Get:7 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [567 kB]           
+
+Get:8 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1 366 kB]
+
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1 142 kB]
+
+Get:10 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [272 kB]
+
+Get:11 http://ru.archive.ubuntu.com/ubuntu jammy-updates/restricted i386 Packages [34,8 kB]             
+
+Get:12 http://ru.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1 412 kB]           
+
+Get:13 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 Sources [964 B]                                                                                 
+
+Get:14 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages [26,7 kB]                                                         
+
+Get:15 http://ru.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [233 kB]                                                       
+
+Get:16 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config amd64 Packages [566 B]                                      
+
+Get:17 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1 044 kB]                        
+
+Get:18 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [687 kB]                                     
+
+Get:19 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [235 kB]                           
+
+Get:20 http://ru.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [42,1 kB]                              
+
+Get:21 http://ru.archive.ubuntu.com/ubuntu jammy-backports/universe i386 Packages [13,4 kB]                            
+
+Get:22 http://ru.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [24,3 kB]                           
+
+Get:23 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config i386 Packages [566 B]                                    
+
+Get:24 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 Packages [14,6 kB]    
+
+Get:25 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools i386 Packages [458 B]     
+
+Get:26 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools amd64 Packages [4 123 B]      
+
+Get:27 http://security.ubuntu.com/ubuntu jammy-security/main i386 Packages [400 kB]
+
+Get:28 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [211 kB]
+
+Get:29 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1 366 kB]
+
+Get:30 http://security.ubuntu.com/ubuntu jammy-security/restricted i386 Packages [33,2 kB]
+
+Get:31 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [224 kB]
+
+Get:32 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [590 kB]
+
+Get:33 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [839 kB]                                                                                                                   
+
+Get:34 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [160 kB]                                                                                                                   
+
+Get:35 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [37,1 kB]                                                                                                                
+
+Fetched 11,4 MB in 7s (1 742 kB/s)                                                                                                                                                                         
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+54 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+root@moon:/home/lilmoon# apt install mysql-server
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+The following packages were automatically installed and are no longer required:
+
+  libmariadb3 mariadb-common
+
+Use 'sudo apt autoremove' to remove them.
+
+The following additional packages will be installed:
+
+  libaio1 libmecab2 mariadb-common mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core mysql-community-client-plugins
+
+  mysql-community-server mysql-community-server-core
+
+The following packages will be REMOVED:
+
+  mariadb-client-core-10.6
+
+The following NEW packages will be installed:
+
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-community-client mysql-community-client-core mysql-community-client-plugins mysql-community-server
+
+  mysql-community-server-core mysql-server
+
+The following packages will be upgraded:
+
+  mariadb-common mysql-common
+
+2 upgraded, 12 newly installed, 1 to remove and 51 not upgraded.
+
+Need to get 37,9 MB of archives.
+
+After this operation, 261 MB of additional disk space will be used.
+
+Do you want to continue? [Y/n] y
+
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libaio1 amd64 0.3.112-13build1 [7 176 B]
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libmecab2 amd64 0.996-14build9 [199 kB]
+
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mariadb-common all 1:10.6.16-0ubuntu0.22.04.1 [16,6 kB]
+
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-utils amd64 0.996-14build9 [4 850 B]
+
+Get:5 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]
+
+Get:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-common amd64 8.0.36-1ubuntu22.04 [67,9 kB]
+
+Get:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-plugins amd64 8.0.36-1ubuntu22.04 [1 443 kB]
+
+Get:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-core amd64 8.0.36-1ubuntu22.04 [2 126 kB]
+
+Get:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client amd64 8.0.36-1ubuntu22.04 [2 199 kB]
+
+Get:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-client amd64 8.0.36-1ubuntu22.04 [66,6 kB]
+
+Get:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server-core amd64 8.0.36-1ubuntu22.04 [24,9 MB]
+
+Get:12 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server amd64 8.0.36-1ubuntu22.04 [78,4 kB]
+
+Get:13 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-server amd64 8.0.36-1ubuntu22.04 [66,6 kB]
+
+Get:14 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4 384 B]
+
+Fetched 37,9 MB in 5s (7 825 kB/s)                 
+
+Preconfiguring packages ...
+
+(Reading database ... 241757 files and directories currently installed.)
+
+Removing mariadb-client-core-10.6 (1:10.6.12-0ubuntu0.22.04.1) ...
+
+(Reading database ... 241745 files and directories currently installed.)
+
+Preparing to unpack .../00-mysql-common_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-common (8.0.36-1ubuntu22.04) over (5.8+1.0.8) ...
+
+Selecting previously unselected package mysql-community-client-plugins.
+
+Preparing to unpack .../01-mysql-community-client-plugins_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-community-client-plugins (8.0.36-1ubuntu22.04) ...
+
+Selecting previously unselected package mysql-community-client-core.
+
+Preparing to unpack .../02-mysql-community-client-core_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-community-client-core (8.0.36-1ubuntu22.04) ...
+
+Selecting previously unselected package mysql-community-client.
+
+Preparing to unpack .../03-mysql-community-client_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-community-client (8.0.36-1ubuntu22.04) ...
+
+Selecting previously unselected package mysql-client.
+
+Preparing to unpack .../04-mysql-client_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-client (8.0.36-1ubuntu22.04) ...
+
+Selecting previously unselected package libaio1:amd64.
+
+Preparing to unpack .../05-libaio1_0.3.112-13build1_amd64.deb ...
+
+Unpacking libaio1:amd64 (0.3.112-13build1) ...
+
+Selecting previously unselected package libmecab2:amd64.
+
+Preparing to unpack .../06-libmecab2_0.996-14build9_amd64.deb ...
+
+Unpacking libmecab2:amd64 (0.996-14build9) ...
+
+Selecting previously unselected package mysql-community-server-core.
+
+Preparing to unpack .../07-mysql-community-server-core_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-community-server-core (8.0.36-1ubuntu22.04) ...
+
+Selecting previously unselected package mysql-community-server.
+
+Preparing to unpack .../08-mysql-community-server_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-community-server (8.0.36-1ubuntu22.04) ...
+
+Preparing to unpack .../09-mariadb-common_1%3a10.6.16-0ubuntu0.22.04.1_all.deb ...
+
+Unpacking mariadb-common (1:10.6.16-0ubuntu0.22.04.1) over (1:10.6.12-0ubuntu0.22.04.1) ...
+
+Selecting previously unselected package mecab-utils.
+
+Preparing to unpack .../10-mecab-utils_0.996-14build9_amd64.deb ...
+
+Unpacking mecab-utils (0.996-14build9) ...
+
+Selecting previously unselected package mecab-ipadic.
+
+Preparing to unpack .../11-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+
+Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+
+Selecting previously unselected package mecab-ipadic-utf8.
+
+Preparing to unpack .../12-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+
+Selecting previously unselected package mysql-server.
+
+Preparing to unpack .../13-mysql-server_8.0.36-1ubuntu22.04_amd64.deb ...
+
+Unpacking mysql-server (8.0.36-1ubuntu22.04) ...
+
+Setting up libmecab2:amd64 (0.996-14build9) ...
+
+Setting up mysql-common (8.0.36-1ubuntu22.04) ...
+
+Installing new version of config file /etc/mysql/conf.d/mysql.cnf ...
+
+Installing new version of config file /etc/mysql/my.cnf.fallback ...
+
+Setting up mariadb-common (1:10.6.16-0ubuntu0.22.04.1) ...
+
+Setting up mecab-utils (0.996-14build9) ...
+
+Setting up mysql-community-client-plugins (8.0.36-1ubuntu22.04) ...
+
+Setting up libaio1:amd64 (0.3.112-13build1) ...
+
+Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+
+Compiling IPA dictionary for Mecab.  This takes long time...
+
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+
+emitting double-array: 100% |###########################################| 
+
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+
+emitting double-array: 100% |###########################################| 
+
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+
+emitting matrix      : 100% |###########################################| 
+
+
+
+done!
+
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+
+Setting up mysql-community-client-core (8.0.36-1ubuntu22.04) ...
+
+Setting up mysql-community-server-core (8.0.36-1ubuntu22.04) ...
+
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+
+Compiling IPA dictionary for Mecab.  This takes long time...
+
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+
+emitting double-array: 100% |###########################################| 
+
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+
+emitting double-array: 100% |###########################################| 
+
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+
+emitting matrix      : 100% |###########################################| 
+
+
+
+done!
+
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+
+Setting up mysql-community-client (8.0.36-1ubuntu22.04) ...
+
+Setting up mysql-client (8.0.36-1ubuntu22.04) ...
+
+Setting up mysql-community-server (8.0.36-1ubuntu22.04) ...
+
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+
+Setting up mysql-server (8.0.36-1ubuntu22.04) ...
+
+Processing triggers for man-db (2.10.2-1) ...
+
+Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+
+root@moon:/home/lilmoon# systemctl status mysql
+
+● mysql.service - MySQL Community Server
+
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+
+     Active: active (running) since Sun 2024-02-11 13:06:05 +04; 1min 17s ago
+
+       Docs: man:mysqld(8)
+
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+
+   Main PID: 120186 (mysqld)
+
+     Status: "Server is operational"
+
+      Tasks: 37 (limit: 25209)
+
+     Memory: 364.3M
+
+        CPU: 1.244s
+
+     CGroup: /system.slice/mysql.service
+
+             └─120186 /usr/sbin/mysqld
+
+
+
+фев 11 13:06:05 moon systemd[1]: Starting MySQL Community Server...
+
+фев 11 13:06:05 moon systemd[1]: Started MySQL Community Server.
+
+root@moon:/home/lilmoon# 
+
+
+
