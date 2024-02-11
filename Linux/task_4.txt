@@ -1,0 +1,26 @@
+root@moon:/home/lilmoon# ls
+
+Desktop  Documents  Downloads  Human_Friends  Music  nginx_1.18.0-6ubuntu14.4_amd64.deb  pack_animals  pets  Pictures  Public  snap  Templates  Videos
+
+root@moon:/home/lilmoon# dpkg -i nginx_1.18.0-6ubuntu14.4_amd64.deb 
+
+(Reading database ... 242180 files and directories currently installed.)
+
+Preparing to unpack nginx_1.18.0-6ubuntu14.4_amd64.deb ...
+
+Unpacking nginx (1.18.0-6ubuntu14.4) over (1.18.0-6ubuntu14.4) ...
+
+Setting up nginx (1.18.0-6ubuntu14.4) ...
+
+root@moon:/home/lilmoon# dpkg -P nginx
+
+(Reading database ... 242180 files and directories currently installed.)
+
+Removing nginx (1.18.0-6ubuntu14.4) ...
+
+root@moon:/home/lilmoon# 
+
+
+
+
+
