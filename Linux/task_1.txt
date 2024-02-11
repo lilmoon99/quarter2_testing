@@ -1,0 +1,86 @@
+root@moon:/home/lilmoon# ls
+
+Desktop  Documents  Downloads  Music  Pictures  Public  snap  Templates  Videos
+
+root@moon:/home/lilmoon# cat > pets
+
+dog 
+
+cat
+
+hamster
+
+parrotroot@moon:/home/lilmoon# cat pets 
+
+dog
+
+cat
+
+hamster
+
+parrotroot@moon:/home/lilmoon# cat > pack_animals
+
+horse
+
+camel
+
+donkey
+
+root@moon:/home/lilmoon# cat pack_animals 
+
+horse
+
+camel
+
+donkey
+
+root@moon:/home/lilmoon# cat pets pack_animals > human friends
+
+cat: friends: No such file or directory
+
+root@moon:/home/lilmoon# cat pets pack_animals > human_friends
+
+root@moon:/home/lilmoon# ls
+
+Desktop  Documents  Downloads  human  human_friends  Music  pack_animals  pets  Pictures  Public  snap  Templates  Videos
+
+root@moon:/home/lilmoon# rm human
+
+root@moon:/home/lilmoon# ls
+
+Desktop  Documents  Downloads  human_friends  Music  pack_animals  pets  Pictures  Public  snap  Templates  Videos
+
+root@moon:/home/lilmoon# cat human_friends 
+
+dog
+
+cat
+
+hamster
+
+parrothorse
+
+camel
+
+donkey
+
+root@moon:/home/lilmoon# vim human_friends 
+
+root@moon:/home/lilmoon# cat human_friends 
+
+dog
+
+cat
+
+hamster
+
+parrot
+
+horse
+
+camel
+
+donkey
+
+root@moon:/home/lilmoon# 
+
