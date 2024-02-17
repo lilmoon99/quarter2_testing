@@ -1,0 +1,86 @@
+mysql> CREATE TABLE animals AS 
+
+    -> SELECT nickname,animal_type,birthdate,commands FROM cats
+
+    -> UNION
+
+    -> SELECT nickname,animal_type,birthdate,commands FROM dogs
+
+    -> UNION
+
+    -> SELECT nickname,animal_type,birthdate,commands FROM hamsters
+
+    -> UNION
+
+    -> SELECT nickname,animal_type,birthdate,commands FROM horses
+
+    -> UNION
+
+    -> SELECT nickname,animal_type,birthdate,commands FROM donkeys;
+
+Query OK, 13 rows affected (0,03 sec)
+
+Records: 13  Duplicates: 0  Warnings: 0
+
+
+
+mysql> ALTER TABLE animals
+
+    -> ADD id INT AUTO_INCREMENT PRIMARY KEY;
+
+Query OK, 0 rows affected (0,05 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> ALTER TABLE animals MODIFY COLUMN id INT FIRST;
+
+Query OK, 13 rows affected (0,05 sec)
+
+Records: 13  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM animals;
+
++----+----------+-------------+------------+------------------------+
+
+| id | nickname | animal_type | birthdate  | commands               |
+
++----+----------+-------------+------------+------------------------+
+
+|  1 | Whiskers | cat         | 2019-05-15 | Sit, Pounce            |
+
+|  2 | Smudge   | cat         | 2020-02-20 | Sit, Pounce, Scratch   |
+
+|  3 | Oliver   | cat         | 2020-06-30 | Meow, Scratch, Jump    |
+
+|  4 | Fido     | dog         | 2020-01-01 | Sit, Stay, Fetch       |
+
+|  5 | Buddy    | dog         | 2018-12-10 | Sit, Paw, Bark         |
+
+|  6 | Bella    | dog         | 2019-11-11 | Sit, Stay, Roll        |
+
+|  7 | Hammy    | hamster     | 2021-03-10 | Roll, Hide             |
+
+|  8 | Peanut   | hamster     | 2021-08-01 | Roll, Spin             |
+
+|  9 | Thunder  | horse       | 2015-07-21 | Trot, Canter, Gallop   |
+
+| 10 | Storm    | horse       | 2014-05-05 | Trot, Canter           |
+
+| 11 | Blaze    | horse       | 2016-02-29 | Trot, Jump, Gallop     |
+
+| 12 | Eeyore   | donkey      | 2017-09-18 | Walk, Carry Load, Bray |
+
+| 13 | Burro    | donkey      | 2019-01-23 | Walk, Bray, Kick       |
+
++----+----------+-------------+------------+------------------------+
+
+13 rows in set (0,00 sec)
+
+
+
+mysql> 
+
