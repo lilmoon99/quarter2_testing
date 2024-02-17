@@ -1,0 +1,66 @@
+mysql> CREATE TABLE young_animals AS SELECT *,
+
+    ->         truncate((datediff(now(),animals.birthdate) / 365.25),0) as age,
+
+    ->         truncate((datediff(now(),animals.birthdate) /30.4375 % 12),0) as months
+
+    -> FROM animals
+
+    -> HAVING age >= 1 and age <= 3;
+
+Query OK, 4 rows affected (0,05 sec)
+
+Records: 4  Duplicates: 0  Warnings: 0
+
+
+
+mysql> ALTER TABLE young_animals DROP COLUMN id;
+
+Query OK, 0 rows affected (0,02 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> ALTER TABLE young_animals
+
+    -> ADD id INT AUTO_INCREMENT PRIMARY KEY;
+
+Query OK, 0 rows affected (0,06 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> ALTER TABLE young_animals MODIFY COLUMN id INT FIRST;
+
+Query OK, 4 rows affected (0,05 sec)
+
+Records: 4  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM young_animals;
+
++----+----------+-------------+------------+----------------------+------+--------+
+
+| id | nickname | animal_type | birthdate  | commands             | age  | months |
+
++----+----------+-------------+------------+----------------------+------+--------+
+
+|  1 | Smudge   | cat         | 2020-02-20 | Sit, Pounce, Scratch |    3 |     11 |
+
+|  2 | Oliver   | cat         | 2020-06-30 | Meow, Scratch, Jump  |    3 |      7 |
+
+|  3 | Hammy    | hamster     | 2021-03-10 | Roll, Hide           |    2 |     11 |
+
+|  4 | Peanut   | hamster     | 2021-08-01 | Roll, Spin           |    2 |      6 |
+
++----+----------+-------------+------------+----------------------+------+--------+
+
+4 rows in set (0,00 sec)
+
+
+
+mysql> 
+
