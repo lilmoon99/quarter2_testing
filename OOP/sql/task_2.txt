@@ -1,0 +1,38 @@
+mysql> DELETE FROM camels;
+
+Query OK, 3 rows affected (0,00 sec)
+
+
+
+mysql> SELECT * FROM camels;
+
+Empty set (0,00 sec)
+
+
+
+mysql> SELECT * FROM donkeys
+
+    -> UNION
+
+    -> SELECT * FROM horses;
+
++----+----------+-------------+------------+------------------------+
+
+| id | nickname | animal_type | birthdate  | commands               |
+
++----+----------+-------------+------------+------------------------+
+
+|  1 | Eeyore   | donkey      | 2017-09-18 | Walk, Carry Load, Bray |
+
+|  2 | Burro    | donkey      | 2019-01-23 | Walk, Bray, Kick       |
+
+|  1 | Thunder  | horse       | 2015-07-21 | Trot, Canter, Gallop   |
+
+|  2 | Storm    | horse       | 2014-05-05 | Trot, Canter           |
+
+|  3 | Blaze    | horse       | 2016-02-29 | Trot, Jump, Gallop     |
+
++----+----------+-------------+------------+------------------------+
+
+5 rows in set (0,01 sec)
+
