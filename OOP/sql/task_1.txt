@@ -1,0 +1,354 @@
+lilmoon@moon:~$ mysql -u root -p
+
+Enter password: 
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+Your MySQL connection id is 8
+
+Server version: 8.0.36 MySQL Community Server - GPL
+
+
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+
+affiliates. Other names may be trademarks of their respective
+
+owners.
+
+
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+
+mysql> CREATE DATABASE human_friends;
+
+ERROR 1007 (HY000): Can't create database 'human_friends'; database exists
+
+mysql> use human_friends;
+
+Database changed
+
+mysql> CREATE TABLE dogs (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     nickname VARCHAR(20) NOT NULL,
+
+    ->     animal_type VARCHAR(20) NOT NULL DEFAULT 'dog',
+
+    ->     birthdate DATE NOT NULL,
+
+    ->     commands VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,02 sec)
+
+
+
+mysql> INSERT INTO dogs (nickname,birthdate,commands) 
+
+    -> VALUES
+
+    -> ('Fido','2020-01-01','Sit, Stay, Fetch'),
+
+    -> ('Buddy','2018-12-10','Sit, Paw, Bark'),
+
+    -> ('Bella','2019-11-11','Sit, Stay, Roll');
+
+Query OK, 3 rows affected (0,02 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM dogs;
+
++----+----------+-------------+------------+------------------+
+
+| id | nickname | animal_type | birthdate  | commands         |
+
++----+----------+-------------+------------+------------------+
+
+|  1 | Fido     | dog         | 2020-01-01 | Sit, Stay, Fetch |
+
+|  2 | Buddy    | dog         | 2018-12-10 | Sit, Paw, Bark   |
+
+|  3 | Bella    | dog         | 2019-11-11 | Sit, Stay, Roll  |
+
++----+----------+-------------+------------+------------------+
+
+3 rows in set (0,00 sec)
+
+
+
+mysql> CREATE TABLE cats (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     nickname VARCHAR(20) NOT NULL,
+
+    ->     animal_type VARCHAR(20) NOT NULL DEFAULT 'cat',
+
+    ->     birthdate DATE NOT NULL,
+
+    ->     commands VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,05 sec)
+
+
+
+mysql> INSERT INTO cats (nickname,birthdate,commands) 
+
+    -> VALUES
+
+    -> ('Whiskers','2019-05-15','Sit, Pounce'),
+
+    -> ('Smudge','2020-02-20','Sit, Pounce, Scratch'),
+
+    -> ('Oliver','2020-06-30','Meow, Scratch, Jump');
+
+Query OK, 3 rows affected (0,01 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM cats;
+
++----+----------+-------------+------------+----------------------+
+
+| id | nickname | animal_type | birthdate  | commands             |
+
++----+----------+-------------+------------+----------------------+
+
+|  1 | Whiskers | cat         | 2019-05-15 | Sit, Pounce          |
+
+|  2 | Smudge   | cat         | 2020-02-20 | Sit, Pounce, Scratch |
+
+|  3 | Oliver   | cat         | 2020-06-30 | Meow, Scratch, Jump  |
+
++----+----------+-------------+------------+----------------------+
+
+3 rows in set (0,00 sec)
+
+
+
+mysql> CREATE TABLE hamsters (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     nickname VARCHAR(20) NOT NULL,
+
+    ->     animal_type VARCHAR(20) NOT NULL DEFAULT 'hamster',
+
+    ->     birthdate DATE NOT NULL,
+
+    ->     commands VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,03 sec)
+
+
+
+mysql> INSERT INTO hamsters (nickname,birthdate,commands) 
+
+    -> VALUES
+
+    -> ('Hammy','2021-03-10','Roll, Hide'),
+
+    -> ('Peanut','2021-08-01','Roll, Spin');
+
+Query OK, 2 rows affected (0,01 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM hamsters;
+
++----+----------+-------------+------------+------------+
+
+| id | nickname | animal_type | birthdate  | commands   |
+
++----+----------+-------------+------------+------------+
+
+|  1 | Hammy    | hamster     | 2021-03-10 | Roll, Hide |
+
+|  2 | Peanut   | hamster     | 2021-08-01 | Roll, Spin |
+
++----+----------+-------------+------------+------------+
+
+2 rows in set (0,00 sec)
+
+
+
+mysql> CREATE TABLE horses (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     nickname VARCHAR(20) NOT NULL,
+
+    ->     animal_type VARCHAR(20) NOT NULL DEFAULT 'horse',
+
+    ->     birthdate DATE NOT NULL,
+
+    ->     commands VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,03 sec)
+
+
+
+mysql> INSERT INTO horses (nickname,birthdate,commands) 
+
+    -> VALUES
+
+    -> ('Thunder','2015-07-21','Trot, Canter, Gallop'),
+
+    -> ('Storm','2014-05-05','Trot, Canter'),
+
+    -> ('Blaze','2016-02-29','Trot, Jump, Gallop');
+
+Query OK, 3 rows affected (0,01 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM horses;
+
++----+----------+-------------+------------+----------------------+
+
+| id | nickname | animal_type | birthdate  | commands             |
+
++----+----------+-------------+------------+----------------------+
+
+|  1 | Thunder  | horse       | 2015-07-21 | Trot, Canter, Gallop |
+
+|  2 | Storm    | horse       | 2014-05-05 | Trot, Canter         |
+
+|  3 | Blaze    | horse       | 2016-02-29 | Trot, Jump, Gallop   |
+
++----+----------+-------------+------------+----------------------+
+
+3 rows in set (0,00 sec)
+
+
+
+mysql> CREATE TABLE camels (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     nickname VARCHAR(20) NOT NULL,
+
+    ->     animal_type VARCHAR(20) NOT NULL DEFAULT 'camel',
+
+    ->     birthdate DATE NOT NULL,
+
+    ->     commands VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,02 sec)
+
+
+
+mysql> INSERT INTO camels (nickname,birthdate,commands) 
+
+    -> VALUES
+
+    -> ('Sandy','2016-11-03','Walk, Carry Load'),
+
+    -> ('Dune','2018-12-12','Walk, Sit'),
+
+    -> ('Sahara','2015-08-14','Walk, Run');
+
+Query OK, 3 rows affected (0,01 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM camels;
+
++----+----------+-------------+------------+------------------+
+
+| id | nickname | animal_type | birthdate  | commands         |
+
++----+----------+-------------+------------+------------------+
+
+|  1 | Sandy    | camel       | 2016-11-03 | Walk, Carry Load |
+
+|  2 | Dune     | camel       | 2018-12-12 | Walk, Sit        |
+
+|  3 | Sahara   | camel       | 2015-08-14 | Walk, Run        |
+
++----+----------+-------------+------------+------------------+
+
+3 rows in set (0,00 sec)
+
+
+
+mysql> CREATE TABLE donkeys (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     nickname VARCHAR(20) NOT NULL,
+
+    ->     animal_type VARCHAR(20) NOT NULL DEFAULT 'donkey',
+
+    ->     birthdate DATE NOT NULL,
+
+    ->     commands VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,03 sec)
+
+
+
+mysql> INSERT INTO donkeys (nickname,birthdate,commands) 
+
+    -> VALUES
+
+    -> ('Eeyore','2017-09-18','Walk, Carry Load, Bray'),
+
+    -> ('Burro','2019-01-23','Walk, Bray, Kick');
+
+Query OK, 2 rows affected (0,00 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM donkeys;
+
++----+----------+-------------+------------+------------------------+
+
+| id | nickname | animal_type | birthdate  | commands               |
+
++----+----------+-------------+------------+------------------------+
+
+|  1 | Eeyore   | donkey      | 2017-09-18 | Walk, Carry Load, Bray |
+
+|  2 | Burro    | donkey      | 2019-01-23 | Walk, Bray, Kick       |
+
++----+----------+-------------+------------+------------------------+
+
+2 rows in set (0,00 sec)
+
+
+
+mysql> 
+
