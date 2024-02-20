@@ -15,7 +15,12 @@ public class Cat extends Animal{
 
     @Override
     public String toString() {
-        return "Cat's name: " + super.getName() + "|" +"Birthday: " + super.getBirthdate();
+        if (super.getSkills().isEmpty()){
+
+            return "ID: " +super.getId()+"|"+ "Cat's name: " + super.getName() + "|" +"Birthday: " + super.getBirthdate();
+        }
+        return "ID: " +super.getId()+"|"+ "Cat's name: " + super.getName() + "|" +"Birthday: " + super.getBirthdate() + "|" + "skills:" + super.getSkills().toString().replaceAll("\\[", "").replaceAll("]","");
+
     }
 
 }

@@ -1,11 +1,14 @@
 package ru.moon.data;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Shelter {
     private Set<Animal> shelter;
     private int animalCounter;
+
+    private int id = 0;
 
     public Shelter() {
         this.shelter = new HashSet<>();
@@ -13,6 +16,8 @@ public class Shelter {
     }
 
     public void add_animal(Animal animal){
+        id++;
+        animal.setId(id);
         this.shelter.add(animal);
         this.animalCounter++;
     }
@@ -21,6 +26,8 @@ public class Shelter {
         this.shelter.remove(animal);
         this.animalCounter--;
     }
+
+
 
     public Set<Animal> getShelter() {
         return shelter;

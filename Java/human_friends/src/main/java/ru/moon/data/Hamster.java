@@ -3,7 +3,7 @@ package ru.moon.data;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Hamster extends Animal{
+public class Hamster extends Animal {
     public Hamster(String name, CharSequence birthdate) {
         super(name, birthdate);
     }
@@ -15,7 +15,7 @@ public class Hamster extends Animal{
 
     @Override
     public String toString() {
-        return "Hamster's name: " + super.getName() + "|"+
+        return "ID: " + super.getId() + "|" + "Hamster's name: " + super.getName() + "|" +
                 "Birthday: " + super.getBirthdate();
     }
 }
