@@ -15,7 +15,11 @@ public class Hamster extends Animal {
 
     @Override
     public String toString() {
-        return "ID: " + super.getId() + "|" + "Hamster's name: " + super.getName() + "|" +
-                "Birthday: " + super.getBirthdate();
+        if (super.getSkills().isEmpty()){
+
+            return "ID: " +super.getId()+"|"+ "Hamster's name: " + super.getName() + "|" +"Birthday: " + super.getBirthdate();
+        }
+        return "ID: " +super.getId()+"|"+ "Hamster's name: " + super.getName() + "|" +"Birthday: " + super.getBirthdate() + "|" + "skills:" + super.getSkills().toString().replaceAll("\\[", "").replaceAll("]","");
+
     }
 }

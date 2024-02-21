@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class Animal {
+public abstract class Animal{
     private String name;
     private LocalDate birthdate;
 
@@ -59,4 +59,5 @@ public abstract class Animal {
     public void trainSkill(String skill){
         this.skills.add(skill);
     }
+
 }

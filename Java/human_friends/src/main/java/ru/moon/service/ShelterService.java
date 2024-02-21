@@ -15,7 +15,7 @@ public class ShelterService {
         System.out.println("Enter the name:");
         Scanner scanner1 = new Scanner(System.in);
         String tempName = scanner1.nextLine();
-        System.out.println("Enter the birthday: ");
+        System.out.println("Enter the birthday(YYYY-MM-DD): ");
         String tempBirthdate = scanner1.nextLine();
 
         LocalDate parsedbirthdate;
@@ -52,27 +52,37 @@ public class ShelterService {
         }
     }
 
-    public void deleteAnimal(int id) {
-        for (Animal animal : this.shelter.getShelter()) {
-            if (animal.getId() == id) {
-                shelter.delete_animal(animal);
-            }
-        }
-    }
+
 
 
     public void trainAnimal(){
-        int id = 0;
-        String skill = null;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter trainee id:");
-        //TODO exception catch
-        id = Integer.parseInt(scanner.nextLine());
-        System.out.println("Enter skill to be trained: ");
-        skill = scanner.nextLine();
-        for (Animal animal : this.shelter.getShelter()){
-            if (animal.getId() == id){
-                animal.trainSkill(skill);
+        if (this.shelter.getShelter().isEmpty()){
+            System.out.println("Your shelter is empty");
+        }else {
+            int id = 0;
+            String skill = null;
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter trainee id:");
+            try {
+                id = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e){
+                System.out.println("You entered wrong id!");
+            }
+            System.out.println("Enter skill to be trained: ");
+            try {
+                skill = scanner.nextLine();
+                boolean isIdExists = false;
+                for (Animal animal : this.shelter.getShelter()){
+                    isIdExists = animal.getId() == id;
+                    if (isIdExists){
+                        animal.trainSkill(skill);
+                    }
+                }
+                if (!isIdExists){
+                    System.out.println("Animal with is ID is not existing in shelter!");
+                }
+            }catch (NoSuchElementException e){
+                System.out.println("You didn't type anything!");
             }
         }
     }
@@ -80,6 +90,19 @@ public class ShelterService {
 
 
     public void getShelterContent() {
-        this.shelter.getShelter().forEach(System.out::println);
+        if (this.shelter.getShelter().isEmpty()){
+            System.out.println("Your shelter is empty!");
+        }
+//        this.shelter.getShelter().forEach(System.out::println);
+        List<Animal> sortedByDate = new ArrayList<>(this.shelter.getShelter());
+        sortedByDate.sort(new AnimalComparatorByDate());
+        sortedByDate.forEach(System.out::println);
+    }
+
+    public void presetLoader(){
+
+        this.shelter.add_animal(new Cat("Murzik","2023-01-05"));
+        this.shelter.add_animal(new Dog("Bobik","2016-05-20"));
+        this.shelter.add_animal(new Hamster("Boris","2023-09-21"));
     }
 }
